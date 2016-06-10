@@ -13,7 +13,7 @@ import Adafruit_GPIO.MCP230xx as MCP
 import Adafruit_CharLCD as LCD
 
 # Can be selected using A0-A1-A3 (default 0x20, up to 0x27)
-address = 0x23
+address = 0x20
 lines = 16
 cols = 2
 
