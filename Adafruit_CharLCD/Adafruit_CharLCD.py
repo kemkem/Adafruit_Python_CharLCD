@@ -258,6 +258,14 @@ class Adafruit_CharLCD(object):
             else:
                 self._gpio.output(self._backlight, self._blpol if backlight else not self._blpol)
 
+    #Turn on backlight
+    def backlightOn(self):
+        self._gpio.output(self._backlight, True)
+
+    #Turn off backlight
+    def backlightOff(self):
+        self._gpio.output(self._backlight, False)
+
     def write8(self, value, char_mode=False):
         """Write 8-bit value in character or data mode.  Value should be an int
         value from 0-255, and char_mode is True if character data or False if
