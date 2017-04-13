@@ -30,7 +30,7 @@ gpio = MCP.MCP23008(address)
 #  _data_pins[1] = 4;  // really d5
 #  _data_pins[2] = 5;  // really d6
 #  _data_pins[3] = 6;  // really d7
-lcd = LCD.Adafruit_CharLCD(1, 2, 3, 4, 5 , 6, lines, cols, gpio=gpio)
+lcd = LCD.Adafruit_CharLCD(1, 2, 3, 4, 5 , 6, lines, cols, gpio=gpio, backlight=7, invert_polarity=False)
 
 lcd.clear()
 time.sleep(1)
@@ -40,3 +40,9 @@ time.sleep(1)
 
 lcd.clear()
 lcd.message('\nLine 2 Only')
+
+lcd.clear()
+lcd.message('Off in 3 sec...')
+time.sleep(3)
+
+lcd.backlightOff()
